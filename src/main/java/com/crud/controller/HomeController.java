@@ -16,29 +16,23 @@ import com.model.service.StudentService;
 
 @Controller
 public class HomeController {
-	
+public int a = 90;
 	@Autowired
 	private StudentService studentService;
-	
-	
-	
 	@RequestMapping
 	public String SetUpForm(Map<String, Object> map)
 	{
 		StudntModel model = new StudntModel();
 		map.put("student", model);
 		map.put("studentList", studentService.list());
-		
+
 		return "student";
 	}
-	
 	@RequestMapping(value="/student.do" , method=RequestMethod.POST)
     public ModelAndView DoAction(@ModelAttribute StudntModel studntModel , BindingResult result , @RequestParam String Action , Map<String, Object> map)
     {
 		return null;
-    	
-    	
     }
-	
+
 
 }
